@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/main.min.css">
+</head>
+<body>
+    <header class="page-header">
+        <div class="contaiter">
+            <button class="header-btn" type="button" data-open-modal>
+                <svg width="40" height="40"><use href="./images/sprite.svg#menu"></use></svg>
+            </button>
+            <nav class="page-nav">
+                <a class="logo" href="./">логотип</a>
+                <div class="nav-box">
+                    <ul>
+                        <li class="">вкладку1</li>
+                        <li>вкладку2</li>
+                        <li>вкладка3</li>
+                    </ul>
+                    <ul>
+                        <li>контакт1</li>
+                        <li>контакт2</li>
+                        <li>контакт3</li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </header>
+    <main>
+    <section class="section features">
+        <div class="container">
+          <h2 class="section-title">Заголовок першої секції</h2>
+
+          <ul class="features-set">
+            <li class="features-item">1</li>
+            <li class="features-item">2</li>
+            <li class="features-item">3</li>
+            <li class="features-item">4</li>
+            <li class="features-item">5</li>
+            <li class="features-item">6</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="section features">
+        <div class="container">
+          <h2 class="section-title">Заголовок другої секції</h2>
+
+          <ul class="features-set">
+            <li class="features-item">1</li>
+            <li class="features-item">2</li>
+            <li class="features-item">3</li>
+            <li class="features-item">4</li>
+            <li class="features-item">5</li>
+            <li class="features-item">6</li>
+          </ul>
+        </div>
+      </section>
+    </main>
+    <div class="backdrop is-hidden" data-backdrop>
+        <div class="modal">
+            <button class="header-btn" type="button" data-close-modal>
+                <svg width="40" height="40"><use href="./images/sprite.svg#cross"></use></svg>
+            </button>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat, nam impedit voluptatibus, minima accusamus velit, blanditiis amet eligendi itaque doloremque tenetur tempora? Explicabo nihil enim voluptatem id deleniti. Dignissimos, doloremque.
+            </p>
+            <p>
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cum perspiciatis consequuntur, deserunt incidunt maxime eum earum, vitae asperiores distinctio sint consectetur quibusdam aspernatur a voluptatem, facilis quis nam error neque.
+            </p>
+            <h1></h1>
+        </div>
+    </div>
+    <script>
+        const refs = {
+          openModalBtn: document.querySelector("[data-open-modal]"),
+          closeModalBtn: document.querySelector("[data-close-modal]"),
+          backdrop: document.querySelector("[data-backdrop]"),
+        };
+  
+        refs.openModalBtn.addEventListener("click", toggleModal);
+        refs.closeModalBtn.addEventListener("click", toggleModal);
+  
+        refs.backdrop.addEventListener("click", logBackdropClick);
+  
+        function toggleModal() {
+          refs.backdrop.classList.toggle("is-hidden");
+        }
+  
+        function logBackdropClick() {
+          console.log("Це клік в бекдроп");
+        }
+      </script>
+</body>
+</html>
